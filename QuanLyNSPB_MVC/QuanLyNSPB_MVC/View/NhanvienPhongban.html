@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhan vien phong ban</title>
+</head>
+<body>
+    <?php
+        if(!empty($NVPBList)){
+            $i = 0;
+            echo '<table border="1" width ="100%">';
+            echo '<caption>Du lieu nhan vien phong ban </caption>';
+            echo '<tr>
+                    <th>IDNV</th>
+                    <th>Ho ten</th>
+                    <th>IDPB</th>
+                    <th>Dia chi</th>
+                    </tr>';
+            while ($i<sizeof($NVPBList)){
+                if(!empty($NVPBList[$i])){
+                    echo '<tr>
+                        <td>' .$NVPBList[$i]->IDNV . '</td>
+                        <td>' . $NVPBList[$i]->Hoten . '</td>
+                        <td>' . $NVPBList[$i]->IDPB . '</td>
+                        <td>' . $NVPBList[$i]->Diachi . '</td>';   
+                        echo '</tr>';
+                }
+                $i++;
+            }
+            echo '</table>';
+        }    
+    ?>
+</body>
+</html>

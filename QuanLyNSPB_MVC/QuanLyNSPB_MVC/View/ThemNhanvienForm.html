@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+  
+</head>
+<body >
+    <form action="http://localhost/QuanLyNSPB_MVC/Controller/C_Nhanvien.php" method="post">
+        <center>
+         <table>
+             <tr>
+                 <td>IDNV</td>
+                 <td>
+                     <input type="text" name="IDNV" value="" >
+                 </td>
+             </tr>
+             <tr>
+                 <td>Họ tên</td>
+                 <td>
+                     <input type="text" name="Hoten" value="">
+                 </td>
+             </tr>
+             <tr>
+                 <td>ID Phòng Ban</td>
+                 <td>
+                     
+                    <select name="IDPB" id="pb">
+                        <?php
+                        if(!empty($phongbanList)){
+                            $i = 0;
+                            while ($i<sizeof($phongbanList)) {
+                                $IDPB = $phongbanList[$i]->IDPB;
+                                if(!empty($phongbanList[$i])){
+                                    echo '<option value="'.$IDPB.'">'.$IDPB.'</option>';
+                                }
+                                $i++;
+                            }
+                        }
+                    ?>
+                      </select>
+                 </td>
+             </tr>
+             <tr>
+                 <td>Địa chỉ</td>
+                 <td>
+                     <input type="text" name="Diachi" value="">
+                 </td>
+             </tr>
+             <tr>
+                 <td>
+                     <input type="submit"name="btn-themnhanvien" value="Them">
+                 </td>
+                 <td>
+                     <input type="reset" value="Reset">
+                 </td>
+             </tr>
+         </table>
+        </center>
+     </form>
+</body>
+</html>

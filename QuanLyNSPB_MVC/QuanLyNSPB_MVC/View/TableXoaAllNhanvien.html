@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xoa nhieu nhan vien</title>
+</head>
+<body>
+    <form action="http://localhost/QuanLyNSPB_MVC/Controller/C_Nhanvien.php" method="post">
+        <table border="1" width="100%" >
+            <tr> <th> IDNV </th> <th> Ho ten</th> <th> Dia Chi</th>  <th>STT</th><th>Chọn</th> </tr>
+            <?php
+            if(!empty($nhanvienList)){ 
+                $i=0;
+                $count = 0;
+                while($count!=sizeof($nhanvienList)){
+                    if(!empty($nhanvienList[$i])){
+                        echo 
+                        '<tr><td>' . $nhanvienList[$i]->IDNV
+                        .'</td><td>' . $nhanvienList[$i]->Hoten. 
+                        '</td><td>' . $nhanvienList[$i]->IDPB . 
+                        '</td><td>' . $nhanvienList[$i]->Diachi .'</td>';
+                        echo '
+                        <td>
+                            <input type="checkbox" name="'.$nhanvienList[$i]->IDNV.'"value="'.$nhanvienList[$i]->IDNV.'">
+                        </td>';
+                        $count++;
+                    }
+                    $i++;
+                }
+            }
+            ?>
+            <tr>
+                <td>
+                <input style="float:right ;" type="submit" name="btn-xoatatca" value="Xóa tất cả">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

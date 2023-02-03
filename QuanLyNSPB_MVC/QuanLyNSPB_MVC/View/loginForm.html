@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <style>
+     body {
+        width: 400px;
+        margin: 0px auto;
+      }
+      caption {
+        margin: 5px 10px;
+      }
+      td {
+        padding: 3px 20px;
+      }
+    </style>
+    <script lang="JavaScript">
+        function isValidate() {
+            if(document.login.username.value =="" && document.login.userpw.value=="") {
+                document.getElementById("errorUserName").innerText= "Hãy nhập username!"
+                document.getElementById("errorPassWord").innerText = "Hãy nhập password!"
+                // alert("Hãy nhập username và password!");
+            }
+            else if(document.login.userpw.value=="") {
+                document.getElementById("errorPassWord").innerText = "Hãy nhập password!"
+            }
+            else if(document.login.username.value=="") {
+                document.getElementById("errorUserName").innerText= "Hãy nhập username!"
+            }
+        }
+        function Reset() {
+            document.login.username.value ="" ;
+            document.login.userpw.value="";
+            document.getElementById("errorUserName").innerText="";
+            document.getElementById("errorPassWord").innerText="";
+        }
+    </script>
+   
+<head>
+</head>
+
+<body style="background-color:aquamarine;">
+
+    <form action="http://localhost/QuanLyNSPB_MVC/Controller/C_Admin.php"method="POST">
+        <table>
+            <tr>
+                <caption>Login</caption>
+            </tr>
+            <tr>
+                <td>
+                    <label for="username">Username</label>   
+                </td>
+                <td>
+                    <input type="text" name="username" value="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="userpw">Password</label>
+                </td>
+                <td>
+                    <input type="password" name="userpw" value="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="btn-login" value="login" onclick="isValidate()" >
+                    
+                </td>
+                <td>
+                    <input type="reset" name="btn-reset" value="Reset" onclick="Reset()">
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </table>
+
+
+    </form>
+</body>
+
+</html>

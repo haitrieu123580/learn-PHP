@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> form Cap nhat phong ban</title>
+</head>
+
+<body>
+    <form action="http://localhost/QuanLyNSPB_MVC/Controller/C_Phongban.php" method="POST">
+        <table>
+            <tr>
+                <caption>Cap nhat thong tin phong ban</caption>
+            </tr>
+            <tr>
+                <td>
+                    <label for="IDPB">IDPB</label>
+                </td>
+                <td>
+                    <?php 
+                    echo "<input readonly type='text' name='IDPB' value='".$phongban[0]->IDPB."'>"
+                    ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Tenpb">Tenpb</label>
+                </td>
+                <td>
+                    <?php
+                        echo '<input type="text" name="Tenpb" value="'.$phongban[0]->Tenpb.'">'
+                    ?>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Mota">Mota</label>
+                </td>
+                <td>
+                    <?php
+                        echo '<input type="text" name="Mota" value="'.$phongban[0]->Mota.'">'
+                    ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="btn-CapnhatPhongban" value="OK" onclick="isValidate()">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

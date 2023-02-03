@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:aquamarine;
+        }
+        div, h3 {
+            padding: 8px 0;
+        }
+        label{
+            margin-right: 55px;
+        }
+        .btn{
+            text-align: center;
+        }
+        .btn input{
+            padding: 3px 4px;
+        }
+    </style>
+</head>
+<body>
+    <form action="http://localhost/QuanLyNSPB_MVC/Controller/C_Nhanvien.php" method="POST">
+        <h3>Tìm kiếm thông tin nhân viên</h3>
+        <div>
+            <input type="radio" name="type" value="IDNV"><label for="IDNV">IDNV</label>
+            <input type="radio" name="type" value="Hoten"><label for="Hoten">Họ tên</label>
+            <input type="radio" name="type" value="Diachi"><label for="Diachi">Địa chỉ</label>    
+        </div>
+        <div>
+            Nhập vào thông tin:
+            <input type="text" name="txt-input">
+        </div>
+        <div class="btn">
+            <input type="submit" value="Tim kiem" name="btn-Timkiem">
+            <input type="button" value="Reset">
+        </div>
+    </form>
+</body>
+</html>
